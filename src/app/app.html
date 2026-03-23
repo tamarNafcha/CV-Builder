@@ -1,0 +1,32 @@
+<div class="app-shell">
+  <header class="app-header">
+    <div>
+      <h1>CV Builder</h1>
+      <p>Create and preview your resume in real time</p>
+    </div>
+  </header>
+
+  <main class="main-layout">
+    <section class="forms-panel">
+      <app-personal-form
+        (personalChanged)="onPersonalChanged($event)">
+      </app-personal-form>
+
+      <app-education-form
+        (educationChanged)="onEducationChanged($event)">
+      </app-education-form>
+    </section>
+
+    <section class="preview-panel">
+      <app-cv-preview
+        [personalDetails]="personalDetails"
+        [educationList]="educationList">
+      </app-cv-preview>
+    </section>
+  </main>
+</div>
+
+
+<!-- בדיקות שהאווטפוט עבד טוב- התקבל המידע שלשלח מהבן לאבא -->
+<!-- <pre>{{ personalDetails | json }}</pre> 
+<pre>{{ educationList | json }}</pre> -->

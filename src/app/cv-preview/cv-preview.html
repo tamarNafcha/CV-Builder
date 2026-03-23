@@ -1,0 +1,81 @@
+<div class="cv-card">
+  <div class="cv-top">
+    <h2>{{ personalDetails.fullName || 'Your Name' }}</h2>
+
+    <div class="cv-contact-row">
+      <span>{{ personalDetails.email || '—' }}</span>
+      <span>{{ personalDetails.phone || '—' }}</span>
+    </div>
+  </div>
+
+  <section class="cv-section">
+    <h3>Profile</h3>
+    <p class="cv-text">
+      {{ personalDetails.description || 'A short professional summary will appear here.' }}
+    </p>
+  </section>
+
+  <section class="cv-section">
+    <h3>Education</h3>
+
+    @if (educationList.length === 0) {
+      <p class="empty-state">Education details will appear here as you type.</p>
+    }
+
+    @for (education of educationList; track education) {
+      <article class="education-block">
+        <div class="education-head">
+          <div>
+            <h4>{{ education.institution || 'Institution name' }}</h4>
+            <p class="degree-line">
+              {{ formatDegreeType(education.degreeType) }}
+              @if (hasValue(education.domain)) {
+                <span>• {{ education.domain }}</span>
+              }
+            </p>
+          </div>
+
+          <div class="education-dates">
+            <span>{{ education.startDate || '—' }}</span>
+            <span> - </span>
+            <span>
+              {{
+                education.studStatus === 'current'
+                  ? 'Present'
+                  : (education.finishDate || '—')
+              }}
+            </span>
+          </div>
+        </div>
+
+        <div class="education-meta">
+          <span><strong>Status:</strong> {{ formatStatus(education.studStatus) }}</span>
+          <span><strong>Average:</strong> {{ education.gradesAvg || '—' }}</span>
+          <span><strong>Excellence:</strong> {{ education.excellence ? 'Yes' : 'No' }}</span>
+        </div>
+
+        <p class="cv-text">
+          {{ education.shortDescription || 'A short education description will appear here.' }}
+        </p>
+
+        <div class="courses-area">
+          <h5>Main Courses</h5>
+
+          @if (!education.mainCourses || education.mainCourses.length === 0) {
+            <p class="empty-state">No courses added yet.</p>
+          }
+
+          @if (education.mainCourses && education.mainCourses.length > 0) {
+            <ul class="courses-list">
+              @for (course of education.mainCourses; track course) {
+                @if (course) {
+                  <li>{{ course }}</li>
+                }
+              }
+            </ul>
+          }
+        </div>
+      </article>
+    }
+  </section>
+</div>

@@ -1,0 +1,106 @@
+:host {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form {
+  background: #ffffff;
+  border: 1px solid #dbe4ee;
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow: 0 12px 26px rgba(30, 58, 95, 0.07);
+  width: 100%;
+  overflow: hidden;
+}
+
+.education-item {
+  border: 1px solid #e5ecf3;
+  border-radius: 18px;
+  padding: 18px;
+  margin-bottom: 18px;
+  background: #fcfdff;
+  width: 100%;
+  overflow: hidden;
+}
+
+.education-item input,
+.education-item select {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  border: 1.5px solid #ccd6e0;
+  border-radius: 12px;
+  font-size: 14px;
+  background: #fbfdff;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.education-item input:focus,
+.education-item select:focus {
+  border-color: #7aa6d8;
+  box-shadow: 0 0 0 4px rgba(122, 166, 216, 0.12);
+}
+
+.education-item input.ng-touched.ng-invalid,
+.education-item select.ng-touched.ng-invalid {
+  border-color: #d66d6d;
+  background: #fff8f8;
+}
+
+.education-item input.ng-touched.ng-valid,
+.education-item select.ng-touched.ng-valid {
+  border-color: #6fb08f;
+  background: #f8fffb;
+}
+
+.education-item label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0 10px;
+  color: #32475b;
+  font-weight: 600;
+}
+
+.course-row {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.course-row input {
+  margin-bottom: 6px;
+}
+
+button {
+  border: none;
+  border-radius: 12px;
+  padding: 11px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s ease;
+  margin-top: 8px;
+  margin-right: 8px;
+}
+
+button[type="button"] {
+  background: #e8f0fb;
+  color: #21476b;
+}
+
+button[type="button"]:hover {
+  background: #d7e6f8;
+}
+
+small {
+  display: block;
+  margin-top: -2px;
+  margin-bottom: 8px;
+  color: #c25151;
+  font-size: 12px;
+}

@@ -1,0 +1,46 @@
+<div class="formContainer">
+  <h2 class="personal-form_title">Personal form:</h2>
+
+  <form #personalForm="ngForm">
+    <label>Full name:</label>
+    <input type="text" name="fullName" [ngModel]="personalData.fullName"
+      (ngModelChange)="updateField('fullName', $event)" required #fullNameRef="ngModel">
+
+    @if (fullNameRef.invalid && fullNameRef.touched) {
+    <small>Full name is required</small>
+    }
+
+    <label>Email:</label>
+    <input type="email" name="email" [ngModel]="personalData.email" (ngModelChange)="updateField('email', $event)"
+      required email #emailRef="ngModel">
+
+    @if (emailRef.touched && emailRef.errors?.['required']) {
+    <small>Email is required</small>
+    }
+
+    @if (emailRef.touched && emailRef.errors?.['email']) {
+    <small>Email format is invalid</small>
+    }
+
+    <label>Phone:</label>
+    <input type="text" name="phone" [ngModel]="personalData.phone" (ngModelChange)="updateField('phone', $event)"
+      required pattern="^[0-9]+$" #phoneRef="ngModel">
+
+    @if (phoneRef.touched && phoneRef.errors?.['required']) {
+    <small>Phone is required</small>
+    }
+
+    @if (phoneRef.touched && phoneRef.errors?.['pattern']) {
+    <small>Phone must contain digits only</small>
+    }
+
+    <label>Short description:</label>
+    <input type="text" name="description" [ngModel]="personalData.description"
+      (ngModelChange)="updateField('description', $event)" required #descriptionRef="ngModel">
+
+    @if (descriptionRef.invalid && descriptionRef.touched) {
+    <small>Short description is required</small>
+    }
+
+  </form>
+</div>
