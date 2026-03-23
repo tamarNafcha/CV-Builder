@@ -1,58 +1,38 @@
-# CVBuilder
+# CV Builder
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.5.
+Angular application for building and previewing a CV in real time.  
+The project demonstrates working with both Template-Driven and Reactive Forms, including validation, dynamic structures, and component-based architecture.
 
-## Development server
+---
 
-To start a local development server, run:
+## הערות למורה
+
+בפרויקט זה מימשתי אפליקציית בניית קורות חיים בהתאם להוראות, תוך שימוש בשני סוגי טפסים באנגולר:
+
+-את טופס פרטים אישיים מימשתי באמצעות **Template Driven Form**, מכיוון שמדובר בטופס פשוט יחסית, ללא צורך בלוגיקה מורכבת או מבנה דינאמי.
+  
+-את טופס ההשכלה מימשתי באמצעות **Reactive Form**, מכיוון שהוא כולל:
+  - מספר פריטי השכלה (טפסים דינאמיים)
+  - מבנה מקונן (**Nested Forms**)
+  - שימוש ב־**FormArray** עבור רשימת קורסים דינאמית בכל השכלה
+
+בנוסף, מימשתי את כל הדרישות הטכניות שהוגדרו:
+- שימוש ב־**Data Binding** (כולל Input, Output ו־Interpolation)
+- חלוקה נכונה לקומפוננטות (טפסים + קומפוננטת תצוגה)
+- עדכון בזמן אמת של תצוגת קורות החיים בהתאם לקלט המשתמש
+- ולידציות לשדות כולל הצגת הודעות שגיאה למשתמש
+-וכן כפי שאר ההנחיות
+---
+
+## הרצת הפרויקט
 
 ```bash
+npm install
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+ואז לפתוח בדפדפן:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+http://localhost:4200
 
 ## Additional Resources
 
