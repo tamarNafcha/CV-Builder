@@ -7,6 +7,8 @@ import { Component, Input } from '@angular/core';
   styleUrl: './cv-preview.css',
 })
 export class CvPreview {
+  
+  // Receives data from parent component using Input (parent -> child communication)
   @Input() personalDetails: any = {};
   @Input() educationList: any[] = [];
 

@@ -1,6 +1,11 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators,AbstractControl, ValidationErrors, ValidatorFn} from '@angular/forms';
 
+//עבור טופס זה בחרתי להשתמש ב Reactive Form 
+// מכיוון שהוא מאפשר קינון טפסים ודינאמיות- מערכים דינאמיים (במקרה זה הקורסים ופרטי ההשכלה) .
+
+// Reactive Form is used here because it supports nested forms and dynamic FormArrays
+
 @Component({
   selector: 'app-education-form',
   standalone: true,
@@ -10,6 +15,7 @@ import { FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators,Abst
 })
 export class EducationForm {
 
+  // Emits form data to parent component for real-time updates (child -> parent communication)
   @Output() educationChanged = new EventEmitter<any>();
 
   educationForm = new FormGroup({
@@ -42,6 +48,8 @@ export class EducationForm {
   ngOnInit() {
   this.educationForm.valueChanges.subscribe(value => {
     console.log('education changed:', value);
+
+    // Send updated form data to parent component
     this.educationChanged.emit(value);
   });
 }

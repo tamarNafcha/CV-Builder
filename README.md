@@ -9,7 +9,11 @@ The project demonstrates working with both Template-Driven and Reactive Forms, i
 
 בפרויקט זה מימשתי אפליקציית בניית קורות חיים בהתאם להוראות, תוך שימוש בשני סוגי טפסים באנגולר:
 
+<<<<<<< HEAD
 -את טופס פרטים אישיים מימשתי באמצעות **Template Driven Form**, מכיוון שמדובר בטופס פשוט יחסית, ללא צורך בלוגיקה מורכבת או מבנה דינאמי.
+=======
+-את טופס פרטים אישיים מימשתי באמצעות **Template Driven Form**, מאחר ומדובר בטופס פשוט יחסית, ללא צורך בלוגיקה מורכבת או מבנה דינאמי.
+>>>>>>> 00caa48 (Add code comments and explanations)
   
 -את טופס ההשכלה מימשתי באמצעות **Reactive Form**, מכיוון שהוא כולל:
   - מספר פריטי השכלה (טפסים דינאמיים)
@@ -37,3 +41,4 @@ http://localhost:4200
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+http://localhost:4200

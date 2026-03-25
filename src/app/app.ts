@@ -14,13 +14,13 @@ export class App {
   personalDetails = {};
   educationList: any[] = [];
 
+  // Receives data from child component and stores it for display
+  
   onPersonalChanged(data: any) {
-    // console.log('parent got:', data); עבור בדיקות
     this.personalDetails = data;
   }
 
   onEducationChanged(data: any) {
-    // console.log('education from child:', data); עבור בדיקות 
     this.educationList = data.educations;
   }
 }
